@@ -1,0 +1,270 @@
+/* Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #34f3d3;
+  --accent: #000000;
+  --text-dark: #000;
+  --text-light: #fff;
+  --font-heading: 'MV Boli', cursive;
+}
+
+body {
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  color: var(--text-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--primary);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar .icons i {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.navbar .icons i:hover {
+  color: var(--primary);
+}
+
+/* Sections */
+.section {
+  padding: 120px 5% 60px;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section h1 span {
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+/* Hero */
+.home .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home .text {
+  flex: 1 1 400px;
+}
+
+.home .text h1 {
+  font-size: 3rem;
+}
+
+.home .text span {
+  font-family: var(--font-heading);
+  color: var(--primary);
+}
+
+.home .text p {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.home .btn {
+  background: var(--primary);
+  color: var(--accent);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.home .image {
+  flex: 1 1 400px;
+  padding-left: 20px;
+}
+
+/* About */
+.about .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.about .text, .about .image {
+  flex: 1 1 400px;
+}
+
+.about .btn {
+  margin-top: 20px;
+  display: inline-block;
+  background: linear-gradient(#34f3d3);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgb(58, 224, 230);
+  transition: all 0.3s ease;
+}
+
+.about_btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Menu */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff6b81; /* Attractive pink-red shade */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff4757; /* Darker on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.card {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.card h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.card .btn {
+  display: block;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Reviews */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.review-grid .card {
+  background: #f8f8f8;
+  padding: 20px;
+  border-left: 5px solid var(--primary);
+  border-radius: 5px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .home .content, .about .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .icons {
+    margin-left: auto;
+  }
+}
